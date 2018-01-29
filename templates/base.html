@@ -1,0 +1,23 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="shortcut icon" href="https://blog.mint.com/wp-content/themes/greensilence/images/favicon.ico">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-lg-8">
+        {% block body %}{% endblock %}
+    </div>
+    <div class="col-lg-4">
+        <h2 class="display-4">My Posts</h2>
+        <p>This is my blog.I hv written {% total_posts %} posts</p>
+        {% show_latest_posts %}
+    </div>
+</div>
+</body>
+</html>
